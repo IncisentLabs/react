@@ -1,6 +1,5 @@
 {
-  "name": "react-build",
-  "private": true,
+  "name": "react",
   "version": "0.14.10-copilot",
   "publishConfig":{"registry":"https://copilot.jfrog.io/copilot/api/npm/copilot-node/"},
   "devDependencies": {
