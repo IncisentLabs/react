@@ -207,10 +207,14 @@ var EventPluginHub = {
         continue;
       }
 
-      var PluginModule =
-        EventPluginRegistry.registrationNameModules[registrationName];
-      if (PluginModule && PluginModule.willDeleteListener) {
-        PluginModule.willDeleteListener(id, registrationName);
+      var PluginModule = EventPluginRegistry.registrationNameModules[registrationName];
+
+      try {
+        if (PluginModule && PluginModule.willDeleteListener) {
+          PluginModule.willDeleteListener(id, registrationName);
+        }
+      }catch(err){
+        console.log(err)
       }
 
       delete listenerBank[registrationName][id];
